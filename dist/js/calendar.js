@@ -1,20 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
   let calendarEl = document.getElementById('calendar');
 
-  let calendar = new FullCalendar.Calendar(calendarEl, {
-    plugins: ['dayGrid', 'timeGrid', 'list', 'interaction', 'moment'],
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-    },
-    initialView: 'dayGridMonth',
-    navLinks: true, // can click day/week names to navigate views
-    editable: true,
-    dayMaxEvents: true, // when too many events in a day, show the popover
-    events: 'data/calendar_events.json'
+  let calendar = new tui.Calendar(calendarEl, {
+    defaultView: 'month',
+    taskView: true,
+    scheduleView: true,
+    useCreationPopup: true,
+    useDetailPopup: true,
+    template: {
+      milestone: function (model) {
+        return '<span class="tui-full-calendar-text">' + model.title + '</span>';
+      },
+      task: function (model) {
+        return '&nbsp;&nbsp;#' + model.title;
+      }
+    }
   });
 
-  calendar.render();
+  fetch('calendar_events.json')
+    .then(response => response.json())
+    .then(data => {
+      const events = data.items.map(event => {
+        return {
+          id: event.id,
+          calendarId: '1',
+          title: event.summary,
+          category: 'time',
+          start: event.start.dateTime || event.start.date,
+          end: event.end.dateTime || event.end.date
+        };
+      });
+
+      calendar.createSchedules(events);
+    })
+    .catch(error => {
+      console.error('Error fetching calendar events:', error);
+    });
 });
+
 
