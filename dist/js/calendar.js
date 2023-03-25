@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   fetch('data/calendar_events.json')
     .then(response => response.json())
     .then(data => {
+      console.log('Fetched data:', data); // Log the fetched data
       const events = data.items.map(event => {
         return {
           id: event.id,
