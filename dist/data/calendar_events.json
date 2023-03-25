@@ -1,19 +1,25 @@
-[
-  {
-    "id": "1",
-    "title": "Meeting with John",
-    "start": "2023-04-01T10:00:00",
-    "end": "2023-04-01T12:00:00"
-  },
-  {
-    "id": "2",
-    "title": "Project Deadline",
-    "start": "2023-04-10"
-  },
-  {
-    "id": "3",
-    "title": "Conference Call",
-    "start": "2023-04-15T14:00:00",
-    "end": "2023-04-15T15:00:00"
-  }
-]
+{
+  "items": [
+    {
+      "id": "1",
+      "summary": "Event 1",
+      "start": {
+        "dateTime": "2023-03-24T10:30:00"
+      },
+      "end": {
+        "dateTime": "2023-03-24T12:30:00"
+      }
+    },
+    {
+      "id": "2",
+      "summary": "Event 2",
+      "start": {
+        "dateTime": "2023-03-25T14:30:00"
+      },
+      "end": {
+        "dateTime": "2023-03-25T16:30:00"
+      }
+    }
+  ]
+}
+
