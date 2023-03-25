@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  fetch('calendar_events.json')
+  fetch('data/calendar_events.json')
     .then(response => response.json())
     .then(data => {
       const events = data.items.map(event => {
