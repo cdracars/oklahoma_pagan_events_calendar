@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
       });
 
-      calendar.createSchedules(events);
+      calendar.createEvents(events);
     })
     .catch(error => {
       console.error('Error fetching calendar events:', error);
