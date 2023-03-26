@@ -40,6 +40,10 @@ def fetch_calendar_events():
             })
 
         # Save the events to the dist/data/calendar_events.json file
+        current_directory = os.getcwd()
+        print(current_directory)
+        parent_directory = os.path.dirname(current_directory)
+        print(parent_directory)
         with open('../../dist/data/calendar_events.json', 'w') as f:
             json.dump(calendar_events, f)
 
