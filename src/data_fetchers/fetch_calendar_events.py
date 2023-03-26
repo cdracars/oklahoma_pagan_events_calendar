@@ -40,23 +40,7 @@ def fetch_calendar_events():
             })
 
         # Save the events to the dist/data/calendar_events.json file
-        current_directory = os.getcwd()
-        parent_directory = os.path.dirname(current_directory)
-        current_directory_contents = os.listdir(current_directory)
-        parent_directory_contents = os.listdir(parent_directory)
-
-        print("Current directory:")
-        print(current_directory)
-        print("Parent directory:")
-        print(parent_directory)
-        print("Contents of current directory:")
-        for item in current_directory_contents:
-            print(item)
-
-        print("\nContents of parent directory:")
-        for item in parent_directory_contents:
-            print(item)
-        with open('../../dist/data/calendar_events.json', 'w') as f:
+        with open('dist/data/calendar_events.json', 'w') as f:
             json.dump(calendar_events, f)
 
         print('Calendar events successfully fetched and saved.')
