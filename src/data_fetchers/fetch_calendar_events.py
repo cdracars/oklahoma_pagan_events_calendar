@@ -31,15 +31,15 @@ def fetch_calendar_events():
             return
 
         # Convert the events to a JSON format suitable for FullCalendar
-        calendar_events = []
+        calendar_events = {"items": []}
         for event in events:
             start = event['start'].get('dateTime', event['start'].get('date'))
             end = event['end'].get('dateTime', event['end'].get('date'))
-            calendar_events.append({
+            calendar_events["items"].append({
                 'id': event['id'],
-                'title': event['summary'],
-                'start': start,
-                'end': end
+                'summary': event['summary'],
+                'start': {'dateTime': start},
+                'end': {'dateTime': end}
             })
 
         # Save the events to the dist/data/calendar_events.json file
