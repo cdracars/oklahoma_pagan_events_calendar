@@ -46,7 +46,7 @@ def fetch_calendar_events():
         {'id': '43b0274378ece9365845655f5350faaf9e38aecfb80ed1b61e371d86daa48e93@group.calendar.google.com',
          'color': '#00ff00'},
         {'id': '992705b76f49af0c45c390f5137175d0142bf2d81c9ede0b0f87478a1de81d9d@group.calendar.google.com',
-         'color': '#00ff00'},
+         'color': '#00ff01'},
     ]
 
     now = datetime.datetime.utcnow()
