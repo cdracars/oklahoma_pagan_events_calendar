@@ -19,13 +19,16 @@ def fetch_calendar_events():
     # Define the time range for calendar events
     now = datetime.datetime.utcnow()
     time_min = now.isoformat() + 'Z'
-    time_max = (now + datetime.timedelta(weeks=4)).isoformat() + 'Z'
-
+    time_max = (now + datetime.timedelta(days=365)).isoformat() + 'Z'
     try:
         # Fetch events from the calendar
-        events_result = service.events().list(calendarId='cupsandcauldrons@gmail.com', timeMin=time_min, timeMax=time_max,
+        events_result = service.events().list(calendarId='primary', timeMin=time_min, timeMax=time_max,
                                               maxResults=1000, singleEvents=True, orderBy='startTime').execute()
         events = events_result.get('items', [])
+
+        if not events:
+            print('No upcoming events found.')
+            return
 
         # Convert the events to a JSON format suitable for FullCalendar
         calendar_events = []
