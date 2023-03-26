@@ -23,7 +23,7 @@ def fetch_calendar_events():
 
     try:
         # Fetch events from the calendar
-        events_result = service.events().list(calendarId='primary', timeMin=time_min, timeMax=time_max,
+        events_result = service.events().list(calendarId='cupsandcauldrons@gmail.com', timeMin=time_min, timeMax=time_max,
                                               maxResults=100, singleEvents=True, orderBy='startTime').execute()
         events = events_result.get('items', [])
 
