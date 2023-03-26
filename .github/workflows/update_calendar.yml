@@ -26,18 +26,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-       - name: Set up Python
-         uses: actions/setup-python@v2
-         with:
-           python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
-       - name: Install dependencies
-         run: pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+      - name: Install dependencies
+        run: pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
 
-       - name: Fetch calendar events
-         run: python src/data_fetchers/fetch_calendar_events.py
-         env:
-           GOOGLE_SERVICE_ACCOUNT_INFO: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_INFO }}
+      - name: Fetch calendar events
+        run: python src/data_fetchers/fetch_calendar_events.py
+        env:
+          GOOGLE_SERVICE_ACCOUNT_INFO: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_INFO }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
