@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
           calendarId: '1',
           title: event.summary,
           category: 'time',
-          color: event.color,dddd
           start: event.start.dateTime || event.start.date,
-          end: event.end.dateTime || event.end.date
+          end: event.end.dateTime || event.end.date,
+          color: event.color
         };
       });
 
