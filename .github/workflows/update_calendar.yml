@@ -46,9 +46,14 @@ jobs:
 
       - name: Commit and push calendar_events.json
         run: |
-          git add dist/data/calendar_events.json
-          git commit -m "Update calendar_events.json [skip ci]"
-          git push
+          git add .
+          if git diff-index --quiet HEAD --; then
+            echo "No changes detected. Skipping commit and push."
+          else
+            git commit -m "Update file with new content"
+            git push
+            echo "Changes detected, committed, and pushed."
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
