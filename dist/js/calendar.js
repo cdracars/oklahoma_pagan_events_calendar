@@ -6,14 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     taskView: true,
     scheduleView: true,
     useDetailPopup: true,
-    template: {
-      milestone: function (model) {
-        return '<span class="tui-full-calendar-text">' + model.title + '</span>';
-      },
-      task: function (model) {
-        return '&nbsp;&nbsp;#' + model.title;
-      }
-    }
   });
 
   calendar.on('beforeRender', function(event) {
