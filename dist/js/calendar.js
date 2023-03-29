@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+
+  calendar.on('beforeRender', function (event) {
+    const date = event.date;
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    event.calendar.setTitle(year + '년 ' + month + '월');
+  });
+
+
   fetch('data/calendar_events.json')
     .then(response => response.json())
     .then(data => {
@@ -29,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
           category: 'time',
           start: event.start.dateTime || event.start.date,
           end: event.end.dateTime || event.end.date,
-          color: event.color
+          color: '#fff',
+          backgroundColor: event.color
         };
       });
 
