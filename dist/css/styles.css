@@ -4,3 +4,10 @@
     font-size: 14px;
     border: 1px solid #e5e5e5;
 }
+
+.tui-full-calendar-month-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
