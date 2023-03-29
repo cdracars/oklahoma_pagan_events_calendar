@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     defaultView: 'month',
     taskView: true,
     scheduleView: true,
-    useCreationPopup: true,
     useDetailPopup: true,
     template: {
       milestone: function (model) {
@@ -17,14 +16,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-
-  calendar.on('beforeRender', function (event) {
+  calendar.on('beforeRender', function(event) {
     const date = event.date;
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
     event.calendar.setTitle(year + '년 ' + month + '월');
-  });
 
+    // Add navigation buttons for going back and forward by one month
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = 'Prev';
+    prevButton.addEventListener('click', function() {
+      event.calendar.prev();
+    });
+
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = 'Next';
+    nextButton.addEventListener('click', function() {
+      event.calendar.next();
+    });
+
+    const title = event.calendar.getTitleElement();
+    title.appendChild(prevButton);
+    title.appendChild(nextButton);
+  });
 
   fetch('data/calendar_events.json')
     .then(response => response.json())
