@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
     useDetailPopup: true,
   });
 
-  var todayButton = $('.today');
-  var prevButton = $('.prev');
-  var nextButton = $('.next');
-  var range = $('.navbar--range');
+  var todayButton = document.querySelector('.today');
+  var prevButton = document.querySelector('.prev');
+  var nextButton = document.querySelector('.next');
+  var range = document.querySelector('.navbar--range');
 
   function fetchEvents() {
     fetch('data/calendar_events.json')
@@ -59,3 +59,4 @@ document.addEventListener('DOMContentLoaded', function () {
   fetchEvents();
   displayRenderRange();
 });
+
