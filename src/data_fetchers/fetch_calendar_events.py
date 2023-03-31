@@ -31,23 +31,23 @@ def get_calendar_events(calendar_id, time_min, time_max):
 
 def fetch_calendar_events():
     calendars = [
-        {'id': 'cupsandcauldrons@gmail.com', 'color': '#ff0000'},
+        {'id': 'cupsandcauldrons@gmail.com', 'color': '#039BE5', 'calendar': 'Site'},
         {'id': 'c625066fd455ccf156421554caee5af8f5576b21718313e2c2b3edfba6b00dfb@group.calendar.google.com',
-         'color': '#00ff00'},
+         'color': '#F09300', 'calendar': 'Astrological'},
         {'id': 'f5473ead46629e811f332ca5998f4f76f00c8db7f90c8cbfa90eb8338d8eed45@group.calendar.google.com',
-         'color': '#00ff00'},
+         'color': '#7986CB', 'calendar': 'Central'},
         {'id': '00abe91aae5b3b7f77b43adba22bfabc82f3367d52090093a7767baeecf39eec@group.calendar.google.com',
-         'color': '#00ff00'},
+         'color': '#009688', 'calendar': 'North-East'},
         {'id': 'a05ddbfc817f26fc85fa4b8388c2812ee9e4d0956980d87157e4e7977839cd15@group.calendar.google.com',
-         'color': '#00ff00'},
+         'color': '#F4511E', 'calendar': 'North-West'},
         {'id': 'baacacacfcf18105165546a682db615fce7313f6aa01cc186f302512bae53afa@group.calendar.google.com',
-         'color': '#00ff00'},
+         'color': '#C0CA33', 'calendar': 'Online'},
         {'id': '93a4df5ce19b40526b552699fac51726fa9d4e9187be845c0e722ad06be8a203@group.calendar.google.com',
-         'color': '#00ff00'},
+         'color': '#039BE5', 'calendar': 'South-Central'},
         {'id': '43b0274378ece9365845655f5350faaf9e38aecfb80ed1b61e371d86daa48e93@group.calendar.google.com',
-         'color': '#00ff00'},
+         'color': '#EF6C00', 'calendar': 'South-East'},
         {'id': '992705b76f49af0c45c390f5137175d0142bf2d81c9ede0b0f87478a1de81d9d@group.calendar.google.com',
-         'color': '#00ff01'},
+         'color': '#F6BF26', 'calendar': 'South-West'},
     ]
 
     now = datetime.datetime.utcnow()
