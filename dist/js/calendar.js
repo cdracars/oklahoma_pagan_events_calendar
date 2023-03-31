@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
             start: event.start.dateTime || event.start.date,
             end: event.end.dateTime || event.end.date,
             color: '#fff',
-            backgroundColor: event.color
+            backgroundColor: event.color,
+            raw: {
+              calender: event.calendar
+            }
           };
         });
         calendar.clear();
