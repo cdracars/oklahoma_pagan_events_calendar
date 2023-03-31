@@ -67,7 +67,8 @@ def fetch_calendar_events():
                 'summary': event['summary'],
                 'start': {'dateTime': start},
                 'end': {'dateTime': end},
-                'color': calendar['color']
+                'color': calendar['color'],
+                'calendar': calendar['calendar']
             })
 
     save_calendar_events(calendar_events)
